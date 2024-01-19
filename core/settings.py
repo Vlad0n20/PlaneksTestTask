@@ -25,8 +25,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
-    'drf-yasg',
-    'django_debug_toolbar',
+    'drf_yasg',
+    'debug_toolbar',
     'rest_framework_simplejwt',
 
     'apps.user.apps.UserConfig',
