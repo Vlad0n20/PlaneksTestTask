@@ -24,6 +24,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'rest_framework',
+    'drf-yasg',
+    'django_debug_toolbar',
+    'rest_framework_simplejwt',
+
+    'apps.user.apps.UserConfig',
+    'apps.schema.apps.SchemaConfig',
+    'apps.column.apps.ColumnConfig',
 ]
 
 MIDDLEWARE = [
