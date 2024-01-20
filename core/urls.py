@@ -11,11 +11,11 @@ from core.yasg import urlpatterns as doc_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('auth/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('', include('apps.user.urls')),
-    path('', include('apps.schema.urls')),
-    path('', include('apps.column.urls')),
+    path('api/v1/auth/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/v1/auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('api/v1/', include('apps.user.urls')),
+    path('api/v1/', include('apps.schema.urls')),
+    path('api/v1/', include('apps.column.urls')),
 
 ]
 urlpatterns += doc_urls
