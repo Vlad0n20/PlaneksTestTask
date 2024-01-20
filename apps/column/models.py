@@ -19,7 +19,12 @@ class Column(models.Model):
     name = models.CharField('Column name', max_length=150)
     type = models.CharField('Column type', max_length=15, choices=ColumnTypeChoices.choices)
     params = models.JSONField('Params', null=True, blank=True)
-    schema = models.ForeignKey(Schema, on_delete=models.SET_NULL, verbose_name='Schema', related_name='columns')
+    schema = models.ForeignKey(
+        Schema,
+        on_delete=models.SET_NULL,
+        verbose_name='Schema',
+        related_name='columns', null=True
+    )
 
     def __str__(self):
         return f'{self.type} for schema {self.schema.name}'

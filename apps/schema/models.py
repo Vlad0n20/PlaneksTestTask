@@ -4,7 +4,7 @@ from apps.user.models import User
 
 
 class Schema(models.Model):
-    user = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='schemas')
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='schemas', null=True)
     name = models.CharField('Name', max_length=150)
     number_of_records = models.SmallIntegerField('Number of records', default=1)
 
