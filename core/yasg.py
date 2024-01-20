@@ -8,10 +8,10 @@ from drf_yasg.inspectors import SwaggerAutoSchema
 class CustomSwaggerViewSetTag(SwaggerAutoSchema):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        if args[-1][2] in ['read', 'update', 'partial_update', 'delete', 'list', 'create', ]:
-            self.tag_name = args[-1][1].title()
+        if args[-1][1] in ['read', 'update', 'partial_update', 'delete', 'list', 'create', ]:
+            self.tag_name = args[-1][0].title()
         else:
-            self.tag_name = args[-1][2].title()
+            self.tag_name = args[-1][1].title()
 
     def get_tags(self, operation_keys=None):
         tags = super().get_tags()
