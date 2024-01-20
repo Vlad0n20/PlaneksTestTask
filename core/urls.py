@@ -15,6 +15,7 @@ urlpatterns = [
     path('auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('', include('apps.user.urls')),
     path('', include('apps.schema.urls')),
+    path('', include('apps.column.urls')),
 
 ]
 urlpatterns += doc_urls
